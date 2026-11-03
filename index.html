@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e14">
+<meta name="description" content="Safe - the offline, PIN-encrypted password vault. Your passwords never leave your phone.">
+<title>Safe - Your passwords, locked and local</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --bg:#0b0e14; --bg2:#10141d; --card:#151a26; --txt:#eef1f7; --dim:#9aa3b5;
+          --acc:#4d7cff; --acc2:#7c5bff; --ok:#2ee6a8; }
+  body { background:var(--bg); color:var(--txt); font-family:'Segoe UI',-apple-system,Roboto,sans-serif; }
+  a { color:var(--acc); text-decoration:none; }
+
+  nav { display:flex; align-items:center; gap:12px; padding:20px 6vw; position:sticky; top:0;
+        background:rgba(11,14,20,.85); backdrop-filter:blur(10px); z-index:10; }
+  .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; }
+  .shield { width:34px; height:34px; }
+
+  .hero { text-align:center; padding:80px 6vw 60px; position:relative; overflow:hidden; }
+  .hero::before { content:""; position:absolute; top:-200px; left:50%; transform:translateX(-50%);
+    width:700px; height:700px; border-radius:50%;
+    background:radial-gradient(circle, rgba(77,124,255,.22), transparent 65%); }
+  .hero h1 { font-size:clamp(36px,7vw,64px); letter-spacing:-1px; position:relative; }
+  .hero h1 span { background:linear-gradient(90deg,var(--acc),var(--acc2),var(--ok));
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p { color:var(--dim); font-size:18px; max-width:560px; margin:18px auto 0; line-height:1.6; position:relative; }
+  .badge { display:inline-block; background:#12212b; color:var(--ok); border:1px solid #1e4a3a;
+           padding:6px 14px; border-radius:30px; font-size:13px; margin-bottom:22px; position:relative; }
+
+  .dlrow { display:flex; gap:14px; justify-content:center; margin-top:34px; flex-wrap:wrap; position:relative; }
+  .dl { display:inline-flex; align-items:center; gap:12px; background:linear-gradient(135deg,var(--acc),var(--acc2));
+        color:#fff; padding:16px 34px; border-radius:16px; font-size:18px; font-weight:700;
+        box-shadow:0 8px 30px rgba(77,124,255,.4); transition:transform .15s, box-shadow .15s; }
+  .dl:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(124,91,255,.5); }
+  .dl small { display:block; font-size:12px; font-weight:400; opacity:.85; }
+  .dl2 { display:inline-flex; align-items:center; gap:10px; background:var(--card); color:var(--txt);
+         padding:16px 28px; border-radius:16px; font-weight:600; border:1px solid #232a3a; }
+  .note { color:var(--dim); font-size:13px; margin-top:16px; position:relative; }
+
+  .shots { display:flex; gap:18px; justify-content:center; margin:70px auto 0; flex-wrap:wrap; position:relative; }
+  .phone { width:210px; border-radius:28px; border:1px solid #232a3a; background:var(--bg2);
+           padding:12px; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+  .screen { border-radius:18px; overflow:hidden; }
+  .screen img { width:100%; display:block; }
+
+  .feats { padding:90px 6vw; max-width:1000px; margin:0 auto; }
+  .feats h2 { text-align:center; font-size:32px; margin-bottom:40px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+  .card { background:var(--card); border:1px solid #1e2534; border-radius:18px; padding:26px; }
+  .card .ic { font-size:26px; margin-bottom:12px; }
+  .card h3 { font-size:17px; margin-bottom:8px; }
+  .card p { color:var(--dim); font-size:14px; line-height:1.6; }
+
+  footer { text-align:center; padding:40px 6vw 50px; color:var(--dim); font-size:13px; border-top:1px solid #161c28; }
+  footer a { margin:0 10px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <svg class="shield" viewBox="0 0 24 24" fill="none">
+      <path d="M12 2L4 5.5v5c0 5 3.4 9.3 8 10.5 4.6-1.2 8-5.5 8-10.5v-5L12 2z" fill="url(#g)"/>
+      <path d="M8.5 12l2.3 2.3L15.7 9.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs><linearGradient id="g" x1="4" y1="2" x2="20" y2="21">
+        <stop stop-color="#4d7cff"/><stop offset="1" stop-color="#7c5bff"/>
+      </linearGradient></defs>
+    </svg>
+    Safe
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">100% offline &middot; No account &middot; No cloud</div>
+  <h1>Your passwords.<br><span>Locked. Local. Yours.</span></h1>
+  <p>Safe is a password vault that lives entirely on your phone. One PIN encrypts
+     everything with AES-256 - nothing ever leaves your device. Tap a logo, copy, done.</p>
+
+  <div class="dlrow">
+    <a class="dl" href="app-release.aab" download>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M5 20h14v-2H5v2zM12 2L5.5 12h4v6h5v-6h4L12 2z"/></svg>
+      <span>Download Safe<small>Android &middot; free &middot; 2 MB</small></span>
+    </a>
+    <a class="dl2" href="vault.html">Try the web demo</a>
+  </div>
+  <p class="note">APK/AAB file goes in this same folder, named exactly <code>app-release.aab</code> (or change the link).</p>
+
+  <div class="shots">
+    <div class="phone"><div class="screen"><img src="shot1.png" alt="Safe app - your vault"></div></div>
+    <div class="phone"><div class="screen"><img src="shot2.png" alt="Safe app - account details"></div></div>
+    <div class="phone"><div class="screen"><img src="shot3.png" alt="Safe app - add account"></div></div>
+  </div>
+</section>
+
+<section class="feats">
+  <h2>Why Safe?</h2>
+  <div class="grid">
+    <div class="card"><div class="ic">🔐</div><h3>AES-256 encryption</h3>
+      <p>Your PIN derives the encryption key. Without it, the data is unreadable noise - even to us.</p></div>
+    <div class="card"><div class="ic">📴</div><h3>Fully offline</h3>
+      <p>No servers, no sync, no tracking. The app never touches the internet. Airplane-mode friendly.</p></div>
+    <div class="card"><div class="ic">👆</div><h3>Tap. Copy. Paste.</h3>
+      <p>A grid of app logos - Facebook, Gmail, Binance... Tap one, hit copy, log in. That's the whole flow.</p></div>
+    <div class="card"><div class="ic">⏱️</div><h3>Auto-lock</h3>
+      <p>Walk away and the vault locks itself after a minute. Your secrets stay secret.</p></div>
+    <div class="card"><div class="ic">🎲</div><h3>Password generator</h3>
+      <p>One tap creates strong random passwords for new accounts.</p></div>
+    <div class="card"><div class="ic">💾</div><h3>Encrypted backups</h3>
+      <p>Export an encrypted backup file and keep it in Drive or email. Restore it anytime, anywhere.</p></div>
+  </div>
+</section>
+
+<footer>
+  <a href="PRIVACY.md">Privacy Policy</a> &middot; <a href="mailto:you@example.com">Contact</a>
+  <p style="margin-top:12px">© 2026 Safe. Built for people who own their data.</p>
+</footer>
+
+</body>
+</html>
